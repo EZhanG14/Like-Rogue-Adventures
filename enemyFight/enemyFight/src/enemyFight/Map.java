@@ -1,4 +1,4 @@
-package enemyFight;
+package CoreAndMap;
 
 import javafx.scene.Group;
 import javafx.scene.image.Image;
