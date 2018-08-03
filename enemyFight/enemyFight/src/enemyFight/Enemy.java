@@ -1,4 +1,4 @@
-package enemyFight;
+package PlayerVSEnemy;
 
 import javafx.scene.Group;
 import javafx.scene.image.Image;
