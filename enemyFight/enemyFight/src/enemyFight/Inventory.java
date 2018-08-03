@@ -1,4 +1,5 @@
 package PlayerVSEnemy;
+import CoreAndMap.*;
 
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
