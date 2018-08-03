@@ -1,4 +1,5 @@
 package CoreAndMap;
+import PlayerVSEnemy.*;
 
 import javafx.scene.layout.*;
 import javafx.animation.AnimationTimer;
