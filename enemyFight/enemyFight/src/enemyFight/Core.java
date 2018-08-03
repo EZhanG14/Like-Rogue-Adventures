@@ -1,4 +1,4 @@
-package enemyFight;
+package CoreAndMap;
 
 import javafx.scene.layout.*;
 import javafx.animation.AnimationTimer;
