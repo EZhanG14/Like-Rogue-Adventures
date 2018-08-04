@@ -1,8 +1,13 @@
 package PlayerVSEnemy;
+
+
 import CoreAndMap.*;
+
+
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.*;
+
+
 /** feature :
  * - Sword: change damage to 3
  * - Healthbag: return full health
@@ -11,9 +16,9 @@ import javafx.scene.layout.*;
  * @author zhaoning meng
  */
 //Eric's Changes: Added getter and setter for healthbag, sworda.
-public class Inventory{ 
+public class Inventory  {
 	
-	private int phealth=10;
+	private static int phealth=10;
 	private int pdamage=1;
 	private int chestchose=0;
 	
@@ -25,10 +30,15 @@ public class Inventory{
     
     private ImageView inventory=new ImageView();
 	private Image inventorybar=new Image("file:inventorybar.png");
+   
 	/**Those method in which add Image to the Core
 	 * 
 	 */
 	public Inventory(){
+
+	
+		
+		
 		
 		inventory.setImage(inventorybar);
 		inventory.setLayoutX(40);
@@ -55,19 +65,22 @@ public class Inventory{
 		getHealthbag().setVisible(false);
 		getHealthbag().setImage(health);
 		Core.layout.getChildren().add(getHealthbag());
+		
+		
+		
 	}
 	/** 
 	 * This is the method to change the health
 	*
 	*/
-	
-	
+
+
 	public void setpHealth(int a){
 		if (phealth<=10)phealth=a;
 	}
 	  
-	public int getpHealth(){
-		return this.phealth;
+	public static int getpHealth(){
+		return phealth;
 	}
 	   /**
 	    * this method to change the Damage

@@ -5,6 +5,7 @@ import javafx.scene.layout.*;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.geometry.Bounds;
+import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -31,20 +32,27 @@ public class Core extends Application {
     private Inventory inventory=new Inventory();
     private Player player1= new Player();
     private Enemy enemy1= new Enemy();
+    private MyCanvas mCanvas=new MyCanvas(WIDTH,HEIGHT);
 	
-	private int pHealth = 10;
-	private int eHealth = 9;
+	private static int pHealth = 10;
+	private static int eHealth = 9;
 	private int chestchose=0;
 	private boolean attack=false;
 	private int moveRes=1;
 	private double deltaX=0;
 	private double deltaY=0;
-	
+    
+	private static final int WIDTH=600;
+	private static final int HEIGHT=650;
+
     @Override
     public void start(Stage stage) throws InterruptedException {
     	
     	stage.setTitle("Demo 2 player Fight");
-    	Scene scene = new Scene(layout, 600, 650);
+    	Scene scene = new Scene(layout, WIDTH, HEIGHT);
+    
+    	
+    	layout.getChildren().add(mCanvas);
     	stage.setScene(scene);
     
     	map1.createMap("void");
@@ -167,7 +175,7 @@ public class Core extends Application {
     		if(object.getBoundsInParent().intersects(pBound.getMinX()+xDelt, pBound.getMinY()+yDelt, pBound.getWidth(), pBound.getHeight())){
     			eHealth -= inventory.getpDamage();
     			pHealth -= 1;
-
+    		
     			System.out.println("eHealth "+ eHealth);
     			System.out.println("pHealth "+ pHealth);
     			
@@ -209,4 +217,14 @@ public class Core extends Application {
     	
     return true;
     }
+
+	public static int getpHealth() {
+		
+		return pHealth;
+	}
+
+	public static int geteHealth() {
+		
+		return eHealth;
+	}
 }   
